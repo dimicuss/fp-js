@@ -9,32 +9,31 @@ import { Textarea } from './components/Textarea';
 import { FormPropsTypes } from './types';
 
 
+const getValue = path(['target', 'value']);
 
 
 const InputField = FieldHoc({
     path: ['input'],
-    getValue: path(['target', 'value']),
+    getValue,
 })(Input);
 
 
 const TextareaField = FieldHoc({
     path: ['textarea'],
-    getValue: path(['target', 'value']),
+    getValue,
 })(Textarea);
 
 
 
-class FormComponent extends React.PureComponent<FormPropsTypes> {
-    render() {
-        return (
-            <form onSubmit={this.props.handleSubmit}>
-                <InputField />
-                <TextareaField />
-                <button type="submit">Submit</button>
-            </form>
-        );
-    }
-}
+const FormComponent: React.FC<FormPropsTypes> = React.memo(({ handleSubmit }) => {
+    return (
+        <form onSubmit={handleSubmit}>
+            <InputField />
+            <TextareaField />
+            <button type="submit">Submit</button>
+        </form>
+    );
+});
 
 
 export const Form = FormHoc(FormComponent);

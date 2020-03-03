@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = {
 	dist: path.resolve('dist'),
 	index: path.resolve('src', 'index'),
+	src: path.resolve('src'),
 }
 
 
@@ -28,17 +29,19 @@ module.exports = {
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js'],
 		alias: {
-			'@': path.resolve('src'),
+			'@': paths.src,
 		}
 	},
 	devServer: {
 		contentBase: paths.dist,
 		open: true,
+		openPage: 'functional-form',
 		historyApiFallback: true,
+		
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'FP patterns',
+			title: 'FP',
 		})
 	]
 }
