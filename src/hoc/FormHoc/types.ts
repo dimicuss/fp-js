@@ -1,11 +1,18 @@
-export interface FormHocPropsType {}
+export interface Fields {
+    [key: string]: any
+}
+
+
+export interface FormHocPropsType {
+    onSubmit: (fields: Fields) => void
+}
 
 export interface FormStateType {
-    fields: { [key: string]: any }
+    fields: Fields
 }
 
 export interface FormPropsType extends FormHocPropsType {
-    Descendant: React.ComponentType
+    Descendant: React.ComponentType<any>
 }
 
 export interface FormContextType extends FormStateType {

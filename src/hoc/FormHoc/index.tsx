@@ -22,6 +22,12 @@ class Form extends React.PureComponent<FormPropsType, FormStateType> {
     };
 
 
+    handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        this.props.onSubmit(this.state.fields);
+    };
+
+
     render() {
         const { fields } = this.state;
         const { Descendant, ...otherProps } = this.props;
@@ -32,11 +38,11 @@ class Form extends React.PureComponent<FormPropsType, FormStateType> {
 
         return (
             <FormContext.Provider value={contextValue}>
-                <Descendant {...otherProps} />
+                <Descendant handleSubmit={this.handleSubmit} {...otherProps} />
             </FormContext.Provider>
         )
     }
 }
 
 export { FormContext };
-export const FormHoc = createHoc<{}>(Form);
+export const FormHoc = createHoc<FormHocPropsType>(Form);

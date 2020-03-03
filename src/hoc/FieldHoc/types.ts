@@ -1,6 +1,6 @@
 export interface FieldAdditionalPropsType {
     path: string[]
-    getValue: (...any: anyp[]) => any
+    getValue: (...any: any[]) => any
 }
 
 

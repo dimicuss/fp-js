@@ -3,16 +3,13 @@ import React from 'react';
 import { FormHoc } from '@/hoc/FormHoc';
 
 import { Input } from './components/Input';
+import { FormPropsTypes } from './types';
 
 
-interface DescendantProps {}
-
-interface Props extends DescendantProps {}
-
-class FormComponent extends React.PureComponent<Props> {
+class FormComponent extends React.PureComponent<FormPropsTypes> {
     render() {
         return (
-            <form>
+            <form onSubmit={this.props.handleSubmit}>
                 <Input />
             </form>
         );
@@ -20,4 +17,4 @@ class FormComponent extends React.PureComponent<Props> {
 }
 
 
-export const Form = FormHoc<DescendantProps>(FormComponent);
+export const Form = FormHoc(FormComponent);
