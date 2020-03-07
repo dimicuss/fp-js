@@ -7,6 +7,7 @@ import { FieldHoc } from '@/hoc/FieldHoc';
 import { Input } from './components/Input';
 import { Textarea } from './components/Textarea';
 import { FormPropsTypes } from './types';
+import { styles } from './styles'
 
 
 const getValue = path(['target', 'value']);
@@ -27,7 +28,7 @@ const TextareaField = FieldHoc({
 
 const FormComponent: React.FC<FormPropsTypes> = React.memo(({ handleSubmit }) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <form style={styles.form} onSubmit={handleSubmit}>
             <InputField />
             <TextareaField />
             <button type="submit">Submit</button>

@@ -5,6 +5,7 @@ export interface Fields {
 
 export interface FormHocPropsType {
     onSubmit: (fields: Fields) => void
+    defaultFields?: Fields
 }
 
 export interface FormStateType {

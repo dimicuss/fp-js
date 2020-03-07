@@ -1,23 +1,34 @@
 import React from 'react';
-import { Router as ReactRouter, Route } from 'react-router'
+import { map } from 'ramda';
 import { createBrowserHistory  } from 'history';
+import { Router as ReactRouter, Route } from 'react-router'
 
-import { Currying } from '@/pages/Currying';
-import { FunctionalForm } from '@/pages/FunctionalForm'
+import { Sidebar } from '@/components/Sidebar'
+import { RouteType } from '@/types';
+
+import { routes } from './routes';
+import { styles } from './styles';
 
 
 const history = createBrowserHistory();
 
 
-export class Router extends React.PureComponent {
-    render() {
-        return (
-            <div>
+const renderRoutes = map<RouteType, React.ReactElement>((route) => (
+    <Route key={route.path} {...route} />
+));
+
+
+export const Router = React.memo(() => {
+    return (
+        <div style={styles.router}>
                 <ReactRouter history={history}>
-                    <Route path="/currying" component={Currying} />
-                    <Route path="/functional-form" component={FunctionalForm} />
+                    <div style={styles.sidebar}>
+                        <Sidebar routes={routes} />
+                    </div>
+                    <div style={styles.page}>
+                        {renderRoutes(routes)}
+                    </div>
                 </ReactRouter>
-            </div>
-        );
-    }
-}
+        </div>
+    );
+});

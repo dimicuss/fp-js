@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { assocPath } from 'ramda';
 
 import { createHoc } from '@/lib/createHoc';
@@ -9,40 +9,41 @@ import { FormHocPropsType, FormStateType, FormContextType, FormPropsType } from 
 const FormContext = React.createContext<FormContextType>(null);
 
 
-class Form extends React.PureComponent<FormPropsType, FormStateType> {
-    state = {
-        fields: {}
-    };
+const Form: React.FC<FormPropsType> = React.memo(({ Descendant, defaultFields = {}, onSubmit, ...otherProps }) => {
+    const [state, setState] = useState<FormStateType>({
+        fields: defaultFields,
+    });
 
 
-    setFormField = (path: string[], value: any) => {
-        this.setState({
-            fields: assocPath(path, value, this.state.fields)
-        })
-    };
+    const { fields } = state;
 
 
-    handleSubmit = (event: React.FormEvent) => {
+    const setFormField = useCallback((path: string[], value: any) => {
+        setState({
+            fields: assocPath(path, value, fields)
+        });
+    }, [fields]);
+
+
+    const handleSubmit = useCallback((event: React.FormEvent) => {
         event.preventDefault();
-        this.props.onSubmit(this.state.fields);
+        onSubmit(fields);
+    }, [fields]);
+
+
+    const contextValue = {
+        fields,
+        setFormField,
     };
 
 
-    render() {
-        const { fields } = this.state;
-        const { Descendant, ...otherProps } = this.props;
-        const contextValue = {
-            fields,
-            setFormField: this.setFormField,
-        };
+    return (
+        <FormContext.Provider value={contextValue}>
+            <Descendant handleSubmit={handleSubmit} {...otherProps} />
+        </FormContext.Provider>
+    );
+});
 
-        return (
-            <FormContext.Provider value={contextValue}>
-                <Descendant handleSubmit={this.handleSubmit} {...otherProps} />
-            </FormContext.Provider>
-        )
-    }
-}
 
 export { FormContext };
 export const FormHoc = createHoc<FormHocPropsType>(Form);
