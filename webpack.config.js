@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
-
 const paths = {
 	dist: path.resolve('dist'),
 	index: path.resolve('src', 'index'),
@@ -23,6 +22,10 @@ module.exports = {
 			{
 				test: /\.tsx?$/,
 				loader: 'ts-loader',
+			},
+			{
+				test: /\.raw\.\w+$/,
+				loader: 'raw-loader',
 			}
 		]
 	},
@@ -35,7 +38,7 @@ module.exports = {
 	devServer: {
 		contentBase: paths.dist,
 		open: true,
-		openPage: 'functional-form',
+		openPage: 'conceptions',
 		historyApiFallback: true,
 		
 	},

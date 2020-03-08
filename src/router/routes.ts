@@ -1,13 +1,13 @@
 import { Currying } from '@/pages/Currying';
 import { FunctionalForm } from '@/pages/FunctionalForm'
-import { PureFunctions } from '@/pages/PureFunctions'
+import { Conceptions } from '@/pages/Conceptions';
 
 
 export const routes = [
     {
-        title: 'Чистые функции',
-        path: '/pure-functions',
-        component: PureFunctions,
+        title: 'Основные концепции ФП',
+        path: '/conceptions',
+        component: Conceptions,
     },
     {
         title: 'Каррирование',
