@@ -4,9 +4,8 @@ import { createStyles } from '@/lib/createStyles'
 export const styles = createStyles({
     router: () => ({
         display: 'flex',
-    }),
-    sidebar: () => ({
-        width: 200,
+        minHeight: '100vh',
+        backgroundColor: '#202831'
     }),
     page: () => ({
         padding: 10,

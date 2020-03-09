@@ -1,10 +1,21 @@
 import * as R from 'ramda';
-import { StyleMapType, CreateStyleMapType, StylePairType } from '@/types';
+import { style } from 'typestyle'
+import { StyleMapType, CreateStyleMapType, StylePairType, ClassNameMapType } from '@/types';
+import { NestedCSSProperties } from 'typestyle/lib/types';
 
 
-export const createStyles = R.pipe<CreateStyleMapType, StylePairType[], StyleMapType>(
+function assocNestedCssProperties(acc: StyleMapType, [key, createStyle]: StylePairType) {
+    return R.assoc(key, createStyle(acc), acc)
+}
+
+
+function styleNestedCssProperties(nestedCssProperties: NestedCSSProperties) {
+    return style(nestedCssProperties)
+}
+
+
+export const createStyles = R.pipe<CreateStyleMapType, StylePairType[], StyleMapType, ClassNameMapType>(
     R.toPairs,
-    R.reduce<StylePairType, StyleMapType>((acc, [key, createStyle]) => {
-        return R.assoc(key, createStyle(acc), acc);
-    }, {}),
+    R.reduce<StylePairType, StyleMapType>(assocNestedCssProperties, {}),
+    R.mapObjIndexed<NestedCSSProperties, string>(styleNestedCssProperties),
 );

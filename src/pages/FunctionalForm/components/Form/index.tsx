@@ -28,7 +28,7 @@ const TextareaField = FieldHoc({
 
 const FormComponent: React.FC<FormPropsTypes> = React.memo(({ handleSubmit }) => {
     return (
-        <form style={styles.form} onSubmit={handleSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit}>
             <InputField />
             <TextareaField />
             <button type="submit">Submit</button>

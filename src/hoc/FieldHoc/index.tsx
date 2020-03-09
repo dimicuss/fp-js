@@ -2,7 +2,6 @@ import React, {useCallback, useContext} from 'react';
 import { path as ramdaPath } from 'ramda';
 
 import { FormContext } from '@/hoc/FormHoc';
-
 import { createHocWithProps } from '@/lib/createHocWithProps';
 
 import { FieldPropsType, FieldAdditionalPropsType } from './types';

@@ -2,14 +2,22 @@ import { createStyles } from '@/lib/createStyles';
 
 
 export const styles = createStyles({
-    sidebar: () => ({
+    main: () => ({
         display: 'flex',
         flexDirection: 'column',
-        borderTop: '1px solid black',
     }),
-    sidebarItem: ({ sidebar }) => ({
-        padding: '10px 10px',
-        border: '1px solid black',
-        borderTop: 'none'
+    hover: () => ({
+        backgroundColor: '#191e24',
+    }),
+    link: ({ hover }) => ({
+        padding: '10px 40px',
+        textDecoration: 'none',
+        color: '#7b8790',
+        outline: 'none',
+        '&:hover': hover,
+    }),
+    activeLink: ({ hover, link }) => ({
+        ...link,
+        ...hover,
     }),
 });

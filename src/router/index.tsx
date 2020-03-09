@@ -20,12 +20,12 @@ const renderRoutes = map<RouteType, React.ReactElement>((route) => (
 
 export const Router = React.memo(() => {
     return (
-        <div style={styles.router}>
+        <div className={styles.router}>
                 <ReactRouter history={history}>
-                    <div style={styles.sidebar}>
+                    <div className={styles.sidebar}>
                         <Sidebar routes={routes} />
                     </div>
-                    <div style={styles.page}>
+                    <div className={styles.page}>
                         {renderRoutes(routes)}
                     </div>
                 </ReactRouter>

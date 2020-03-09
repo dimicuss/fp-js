@@ -1,6 +1,6 @@
 import React from 'react';
 import { map } from 'ramda';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { RouteType } from '@/types';
 
@@ -9,14 +9,13 @@ import { SidebarPropsType } from './types';
 
 
 const renderLinks = map<RouteType, React.ReactElement>(({ title, path }) => {
-    return <Link to={path} style={styles.sidebarItem} key={path}>{title}</Link>
+    return <NavLink to={path} className={styles.link} activeClassName={styles.activeLink} key={path}>{title}</NavLink>
 });
-
 
 
 export const Sidebar: React.FC<SidebarPropsType> = React.memo(({ routes }) => {
     return (
-        <div style={styles.sidebar}>
+        <div className={styles.main}>
             {renderLinks(routes)}
         </div>
     );
