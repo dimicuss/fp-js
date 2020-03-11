@@ -1,6 +1,7 @@
 import React from 'react';
-import { codeStyle } from './codeStyle';
 import SyntaxHighlighter from 'react-syntax-highlighter'
+
+import { codeStyle } from './codeStyle';
 
 
 export const Code: React.FC = React.memo((props) => {

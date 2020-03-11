@@ -3,7 +3,7 @@ export const codeStyle = {
         "display": "block",
         "overflowX": "auto",
         "padding": "0.5em",
-        "background": '#202831',
+        "background": 'transparent',
         "color": "#ddd"
     },
     "hljs-tag": {

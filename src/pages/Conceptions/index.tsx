@@ -13,13 +13,13 @@ import createDirtyFunction from './examples/dirtyFunction.raw';
 import mergeWithDefaultObject from './examples/mergeWithDefaultObject.raw';
 
 
-export const Conceptions = React.memo(() => {
+export const Conceptions: React.FC = React.memo(() => {
     return (
         <div>
             <HeaderOne>Основные коцепции ФП</HeaderOne>
             <HeaderTwo>Чистые функции</HeaderTwo>
             <Paragraph>
-                Чистая функция - функция, которая является детерминированной, и не имеет побочных эффектов.
+                Чистая функция - функция, которая является детерминированной и не имеет побочных эффектов.
             </Paragraph>
             <HeaderThree>Пример:</HeaderThree>
             <Code>{pureFunction}</Code>

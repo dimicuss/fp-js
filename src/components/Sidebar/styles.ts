@@ -8,6 +8,7 @@ export const styles = createStyles({
     }),
     hover: () => ({
         backgroundColor: '#191e24',
+        color: '#5dbcd2',
     }),
     link: ({ hover }) => ({
         padding: '10px 40px',
