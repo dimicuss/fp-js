@@ -19,7 +19,7 @@ export const Conceptions = React.memo(() => {
             <HeaderOne>Основные коцепции ФП</HeaderOne>
             <HeaderTwo>Чистые функции</HeaderTwo>
             <Paragraph>
-                Чистая функция - функция, которая является детерминированной, и не имеет попобочных эффектов.
+                Чистая функция - функция, которая является детерминированной, и не имеет побочных эффектов.
             </Paragraph>
             <HeaderThree>Пример:</HeaderThree>
             <Code>{pureFunction}</Code>
