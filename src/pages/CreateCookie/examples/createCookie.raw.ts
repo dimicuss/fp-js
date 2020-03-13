@@ -6,7 +6,7 @@ function concatEntry(entry) {
 }
 
 
-function createCookie(obj) {
+export default function createCookie(obj) {
     return `${
         Object
             .entries(obj)
