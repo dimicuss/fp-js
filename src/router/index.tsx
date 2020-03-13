@@ -22,9 +22,7 @@ export const Router = React.memo(() => {
     return (
         <div className={styles.router}>
                 <ReactRouter history={history}>
-                    <div className={styles.sidebar}>
-                        <Sidebar routes={routes} />
-                    </div>
+                    <Sidebar routes={routes} />
                     <div className={styles.page}>
                         {renderRoutes(routes)}
                     </div>

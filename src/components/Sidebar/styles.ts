@@ -5,7 +5,7 @@ export const styles = createStyles({
     main: () => ({
         display: 'flex',
         flexDirection: 'column',
-        height: '100vh',
+        sd: 'sds',
         backgroundColor: '#212031',
     }),
     hover: () => ({

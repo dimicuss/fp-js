@@ -8,7 +8,7 @@ export const styles = createStyles({
         backgroundColor: '#202831'
     }),
     page: () => ({
-        padding: 10,
+        padding: '20px 40px',
         width: '100%',
     }),
 });
