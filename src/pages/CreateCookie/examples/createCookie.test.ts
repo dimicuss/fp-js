@@ -1,17 +1,10 @@
-import createCookie,  { createCookieFunctional } from './createCookie.raw';
+import createCookie,  { createCookieFunctional } from './createCookie';
+import cookie, { handledCookie } from './cookie'
 
 
 describe('create cookie test', () => {
-    it('shuoul return serialized cookie object', () => {
-        const cookieObjMock = {
-            a: 'mockA',
-            b: 'mockB',
-            c: 'mockC',
-        };
-        const expectation = 'a=mockA; b=mockB; c=mockC;'
-
-
-        expect(createCookie(cookieObjMock)).toBe(expectation);
-        expect(createCookieFunctional(cookieObjMock)).toBe(expectation);
+    it('shuould return serialized cookie object', () => {
+        expect(createCookie(cookie)).toBe(handledCookie);
+        expect(createCookieFunctional(cookie)).toBe(handledCookie);
     })
 });

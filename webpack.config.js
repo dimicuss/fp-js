@@ -24,7 +24,7 @@ module.exports = {
 				use: 'ts-loader',
 			},
 			{
-				test: /\.raw\.\w+$/,
+				test: /\/examples\//,
 				use: 'raw-loader',
 			},
 			{

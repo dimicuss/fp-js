@@ -4,7 +4,7 @@ import { HeaderOne } from '@/components/HeaderOne';
 import { HeaderTwo } from '@/components/HedaerTwo';
 import { Paragraph } from '@/components/Paragraph';
 
-import composition from './examples/composition.raw'
+import composition from './examples/composition'
 
 
 export const Composition: React.FC = React.memo(() => (

@@ -4,7 +4,7 @@
   "description": "Functional programming design patterns",
   "main": "dist/index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest",
+    "test": "cross-env NODE_ENV=test jest --watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server",
     "prod": "cross-env NODE_ENV=production webpack-cli",
     "dev": "cross-env NODE_ENV=development webpack-cli"

@@ -6,11 +6,11 @@ import { HeaderTwo } from '@/components/HedaerTwo';
 import { HeaderThree } from '@/components/HeaderThree';
 import { Paragraph } from '@/components/Paragraph';
 
-import map from './examples/map.raw';
-import pureFunction from './examples/sum.raw'
-import recursiveMap from './examples/recursiveMap.raw';
-import createDirtyFunction from './examples/dirtyFunction.raw';
-import mergeWithDefaultObject from './examples/mergeWithDefaultObject.raw';
+import map from './examples/map';
+import pureFunction from './examples/sum'
+import recursiveMap from './examples/recursiveMap';
+import createDirtyFunction from './examples/dirtyFunction';
+import mergeWithDefaultObject from './examples/mergeWithDefaultObject';
 
 
 export const Conceptions: React.FC = React.memo(() => {

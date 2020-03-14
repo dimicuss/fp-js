@@ -1,15 +1,20 @@
 import * as React from 'react';
 import { Code } from '@/components/Code';
-import { HeaderOne } from '@/components/HeaderOne'
-import { Paragraph }from '@/components/Paragraph'
+import { HeaderOne } from '@/components/HeaderOne';
+import { HeaderTwo } from '@/components/HedaerTwo';
+import { Paragraph }from '@/components/Paragraph';
 
-import createCookie from './examples/createCookie.raw'
+import cookie from './examples/cookie'
+import createCookie from './examples/createCookie'
 
 
 export const CreateCookie = React.memo(() => (
     <div>
         <HeaderOne>Создание cookie строки</HeaderOne>
-        <Paragraph>Попробуем написать функциональный аналог createCookie</Paragraph>
+        <Paragraph>Необхдимо сериализовать объект по cookie спецификации (a=A; b=B; ...)</Paragraph>
+        <HeaderTwo>Входные и выходные данные:</HeaderTwo>
+        <Code>{cookie}</Code>
+        <HeaderTwo>Решение:</HeaderTwo>
         <Code>{createCookie}</Code>
     </div>
 ));

@@ -23,3 +23,6 @@ function rawEnhancedSum(...rest) {
 const enhancedSum = curryN(3, rawEnhancedSum);
 enhancedSum(1)(2)(3); // => 6
 enhancedSum(1, 2, 3); // => 6
+
+
+export default enhancedSum;

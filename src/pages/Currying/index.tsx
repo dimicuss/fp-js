@@ -4,8 +4,7 @@ import { HeaderThree } from '@/components/HeaderThree';
 import { Paragraph } from '@/components/Paragraph';
 import { Code } from '@/components/Code';
 
-// @ts-ignore
-import sum from './examples/sum.raw';
+import sum from './examples/sum';
 
 
 export const Currying = React.memo(() => {
