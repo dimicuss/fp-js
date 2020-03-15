@@ -15,7 +15,7 @@ export default function createCookie(obj) {
 
 
 // Функциональное решение
-const concatEnd = R.flip(R.concat);
+const concatEnd = R.flip(R.concat); // Наш старый знакомый
 
 export const createCookieFunctional = R.pipe(
     R.toPairs,

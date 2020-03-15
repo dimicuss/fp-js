@@ -11,7 +11,7 @@ import createCookie from '!!raw-loader!./examples/createCookie'
 export const CreateCookie = React.memo(() => (
     <div>
         <HeaderOne>Создание cookie строки</HeaderOne>
-        <Paragraph>Необхдимо сериализовать объект по cookie спецификации (a=A; b=B; ...)</Paragraph>
+        <Paragraph>Необходимо сериализовать объект по cookie спецификации (a=A; b=B; ...)</Paragraph>
         <HeaderTwo>Входные и выходные данные:</HeaderTwo>
         <Code>{cookie}</Code>
         <HeaderTwo>Решение:</HeaderTwo>

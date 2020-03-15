@@ -1,24 +1,21 @@
 import * as R from 'ramda';
 
 
-const concatStart = R.flip(R.concat); // Определим функцию для сложения 2 срок, при этом последнй аргумент будет добавляться в начало строки
-const addA = concatStart('A'); // Определим 3 функции с начальными аргументами
-const addB = concatStart('B');
-const addC = concatStart('C');
+const concatEnd = R.flip(R.concat); // Сделаем реверс аргументов concat, тем самым создадим функцию для добавления строки в конец другой строки
+const appendA = concatEnd('A'); // Определим 3 функции с начальными аргументами
+const appendB = concatEnd('B');
+const appendC = concatEnd('C');
 
 
-const naturalComposition = R.compose( // Создадим композицию из выше перечисленных функций.
-    addA,
-    addB,
-    addC,
-);
+// Создадим композицию из выше перечисленных функций.
+const naturalComposition = R.compose(appendC, appendB, appendA);
 
 const reversedComposition = R.pipe( // аналог композиции, но с измененным порядком передачи аргумента
-    addA,
-    addB,
-    addC,
+    appendA,
+    appendB,
+    appendC,
 );
 
-naturalComposition('') // => CBA
-addA(addB(addC(''))); // => CBA (эквивалент)
-reversedComposition(''); // => ABC
+naturalComposition('First Arg ') // => "FirstArg ABC"
+appendB(appendB(appendA('First Arg'))); // => "FirstArg ABC" (эквивалент)
+reversedComposition('First Arg '); // => "FirstArg ABC"
