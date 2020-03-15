@@ -1,5 +1,5 @@
 export default [
-     {
+    {
         type: 'Otp',
         value: '79161234567'
     },

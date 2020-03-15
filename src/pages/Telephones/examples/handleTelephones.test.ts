@@ -1,4 +1,4 @@
-import telephones, { handledTelephones } from './telephones.raw';
+import telephones, { handledTelephones } from './telephones';
 import handleTelephones, { handleTelephonesFunctional } from './handleTelephones';
 
 describe('handle telephones test', () => {
