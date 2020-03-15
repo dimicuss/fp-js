@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { ensureStringObj } from 'typestyle/lib/internal/formatting';
+
 
 function handleTelephone([otpTelephone, handledTelephones], { value, type }) {
     const handledTelephone = {
@@ -31,21 +31,25 @@ export default function handleTelephones(telephones) {
 }
 
 
-
+// Функциональное решение
+const getType = R.prop('type');
+const getValue = R.prop('value');
+const getTelephone = R.nthArg(1);
+const getOtpTelephone = R.nthArg(0);
 
 export const handleTelephonesFunctional = R.pipe(
     R.mapAccum(R.pipe(
         R.applySpec({
-            type: R.pipe(R.nthArg(1), R.prop('type')),
-            otpTelephone: R.nthArg(0),
-            handledTelephone: R.pipe(R.nthArg(1), R.applySpec({
-                label: R.prop('value'),
-                value: R.prop('value'),
+            type: R.pipe(getTelephone, getType),
+            otpTelephone: getOtpTelephone,
+            handledTelephone: R.pipe(getTelephone, R.applySpec({
+                label: getValue,
+                value: getValue,
             })),
         }),
         R.juxt([
             R.ifElse(
-                R.pipe(R.prop('type'), R.equals('Otp')),
+                R.pipe(getType, R.equals('Otp')),
                 R.prop('handledTelephone'),
                 R.prop('otpTelephone'),
             ),
@@ -54,6 +58,6 @@ export const handleTelephonesFunctional = R.pipe(
     ), null),
     R.applySpec({
         otpTelephone: R.prop('0'),
-        dropdownTelephones: R.pipe(R.prop('1'), R.uniqBy(R.prop('value'))),
+        dropdownTelephones: R.pipe(R.prop('1'), R.uniqBy(getValue)),
     }),
 );

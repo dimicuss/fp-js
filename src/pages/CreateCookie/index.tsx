@@ -4,8 +4,8 @@ import { HeaderOne } from '@/components/HeaderOne';
 import { HeaderTwo } from '@/components/HedaerTwo';
 import { Paragraph }from '@/components/Paragraph';
 
-import cookie from './examples/cookie'
-import createCookie from './examples/createCookie'
+import cookie from '!!raw-loader!./examples/cookie'
+import createCookie from '!!raw-loader!./examples/createCookie'
 
 
 export const CreateCookie = React.memo(() => (

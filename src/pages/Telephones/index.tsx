@@ -4,8 +4,8 @@ import { HeaderTwo } from '@/components/HedaerTwo';
 import { Paragraph } from '@/components/Paragraph';
 import { Code } from '@/components/Code';
 
-import telephones from './examples/telephones.raw'
-import handleTelephones from './examples/handleTelephones'
+import telephones from '!!raw-loader!./examples/telephones.raw'
+import handleTelephones from '!!raw-loader!./examples/handleTelephones'
 
 
 
