@@ -16,6 +16,6 @@ const reversedComposition = R.pipe( // аналог композиции, но �
     appendC,
 );
 
-naturalComposition('First Arg ') // => "FirstArg ABC"
-appendB(appendB(appendA('First Arg'))); // => "FirstArg ABC" (эквивалент)
+naturalComposition('First Arg '); // => "FirstArg ABC"
+appendB(appendB(appendA('First Arg '))); // => "FirstArg ABC" (эквивалент)
 reversedComposition('First Arg '); // => "FirstArg ABC"
