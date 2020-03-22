@@ -7,15 +7,10 @@ const appendB = concatEnd('B');
 const appendC = concatEnd('C');
 
 
-// Создадим композицию из выше перечисленных функций.
-const naturalComposition = R.compose(appendC, appendB, appendA);
+const naturalComposition = R.compose(appendC, appendB, appendA); // Создадим композицию из выше перечисленных функций.
+const reversedComposition = R.pipe(appendA, appendB, appendC);  // аналог композиции, но с измененным порядком передачи аргумента
 
-const reversedComposition = R.pipe( // аналог композиции, но с измененным порядком передачи аргумента
-    appendA,
-    appendB,
-    appendC,
-);
 
-naturalComposition('First Arg '); // => "FirstArg ABC"
-appendB(appendB(appendA('First Arg '))); // => "FirstArg ABC" (эквивалент)
-reversedComposition('First Arg '); // => "FirstArg ABC"
+naturalComposition('Initial Arg '); // => "Initial Arg ABC"
+appendB(appendB(appendA('Initial Arg '))); // => "Initial Arg ABC" (эквивалент)
+reversedComposition('Initial Arg '); // => "Initial Arg ABC"
