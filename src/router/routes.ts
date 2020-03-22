@@ -1,4 +1,5 @@
 import { Currying } from '@/pages/Currying';
+import { Dictionary } from '@/pages/Dictionary';
 import { FunctionalForm } from '@/pages/FunctionalForm'
 import { Conceptions } from '@/pages/Conceptions';
 import { Composition } from '@/pages/Composition';
@@ -30,6 +31,11 @@ export const routes = [
         title: 'Обработка телефонной книги',
         path: '/telephones',
         component: Telephones,
+    },
+    {
+        title: 'Словари',
+        path: '/dictionaries',
+        component: Dictionary,
     },
     {
         title: 'Форма в ФП стиле',

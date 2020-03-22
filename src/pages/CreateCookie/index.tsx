@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Code } from '@/components/Code';
 import { HeaderOne } from '@/components/HeaderOne';
-import { HeaderTwo } from '@/components/HedaerTwo';
+import { HeaderThree } from '@/components/HeaderThree';
 import { Paragraph }from '@/components/Paragraph';
 
 import cookie from '!!raw-loader!./examples/cookie'
@@ -12,9 +12,9 @@ export const CreateCookie = React.memo(() => (
     <div>
         <HeaderOne>Создание cookie строки</HeaderOne>
         <Paragraph>Необходимо сериализовать объект по cookie спецификации (a=A; b=B; ...)</Paragraph>
-        <HeaderTwo>Входные и выходные данные:</HeaderTwo>
+        <HeaderThree>Входные и выходные данные:</HeaderThree>
         <Code>{cookie}</Code>
-        <HeaderTwo>Решение:</HeaderTwo>
+        <HeaderThree>Решение:</HeaderThree>
         <Code>{createCookie}</Code>
     </div>
 ));

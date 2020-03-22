@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Code } from '@/components/Code';
 import { HeaderOne } from '@/components/HeaderOne';
-import { HeaderTwo } from '@/components/HedaerTwo';
+import { HeaderTwo } from '@/components/HeaderTwo';
 import { Paragraph } from '@/components/Paragraph';
 
 import composition from '!!raw-loader!./examples/composition'

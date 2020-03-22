@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Code } from '@/components/Code'
 import { HeaderOne } from '@/components/HeaderOne';
-import { HeaderTwo } from '@/components/HedaerTwo';
+import { HeaderTwo } from '@/components/HeaderTwo';
 import { HeaderThree } from '@/components/HeaderThree';
 import { Paragraph } from '@/components/Paragraph';
 

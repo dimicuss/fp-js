@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeaderOne } from '@/components/HeaderOne';
-import { HeaderTwo } from '@/components/HedaerTwo';
+import { HeaderThree } from '@/components/HeaderThree';
 import { Paragraph } from '@/components/Paragraph';
 import { Code } from '@/components/Code';
 
@@ -16,9 +16,9 @@ export const Telephones = React.memo(() => (
             Необходимо отобразить данные в набор селектов для дропдауна
             (react-select), на выходе множество селектов должно быть уникальм, так же нужно пределить дефолтный селект по типу телефона.
         </Paragraph>
-        <HeaderTwo>Входные и выходные данные:</HeaderTwo>
+        <HeaderThree>Входные и выходные данные:</HeaderThree>
         <Code>{telephones}</Code>
-        <HeaderTwo>Решение:</HeaderTwo>
+        <HeaderThree>Решение:</HeaderThree>
         <Code>{handleTelephones}</Code>
     </div>
 ))
